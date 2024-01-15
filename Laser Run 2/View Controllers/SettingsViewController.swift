@@ -140,7 +140,6 @@ class SettingsViewController: UIViewController, SKPaymentTransactionObserver, SK
             createAlert(withTitle: "Product Not Found", withDescription: "Could not establish a connection")
         }
         else{
-            print("hello")
             product = products[0]
             createPurchaseAlert(withTitle: product!.localizedTitle, withDescription: product!.localizedDescription)
             removeButton.isEnabled = true

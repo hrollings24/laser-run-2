@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,13 +14,9 @@
 		AF01892E24AF72C400F58E1A /* Split.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01892D24AF72C400F58E1A /* Split.swift */; };
 		AF01893024AF734B00F58E1A /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01892F24AF734B00F58E1A /* Double.swift */; };
 		AF032C8924BE534D001FF0C3 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFACFAA324AB9AD800ADBB20 /* GameKit.framework */; };
-		AF16ECE724B32EC500B14E8F /* nanopb.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF16ECE224B32EC500B14E8F /* nanopb.xcframework */; };
-		AF16ECE924B32EC500B14E8F /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF16ECE324B32EC500B14E8F /* GoogleMobileAds.framework */; };
-		AF16ECEB24B32EC500B14E8F /* GoogleUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF16ECE424B32EC500B14E8F /* GoogleUtilities.xcframework */; };
-		AF16ECED24B32EC500B14E8F /* PromisesObjC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF16ECE524B32EC500B14E8F /* PromisesObjC.xcframework */; };
-		AF16ECEF24B32EC500B14E8F /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF16ECE624B32EC500B14E8F /* GoogleAppMeasurement.framework */; };
 		AF16ECF524B3739400B14E8F /* Ads.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF16ECF424B3739400B14E8F /* Ads.swift */; };
 		AF1B106A24B8B07300C41937 /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1B106924B8B07300C41937 /* BackgroundViewController.swift */; };
+		AF71A31A2B55D2900065ACF5 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = AF71A3192B55D2900065ACF5 /* GoogleMobileAds */; };
 		AF7FBB3424AA345A00C9E2AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7FBB3324AA345A00C9E2AF /* AppDelegate.swift */; };
 		AF7FBB3A24AA345A00C9E2AF /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7FBB3924AA345A00C9E2AF /* GameScene.swift */; };
 		AF7FBB3C24AA345A00C9E2AF /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7FBB3B24AA345A00C9E2AF /* GameViewController.swift */; };
@@ -72,11 +68,6 @@
 		AF01892B24AF70FF00F58E1A /* Slow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slow.swift; sourceTree = "<group>"; };
 		AF01892D24AF72C400F58E1A /* Split.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Split.swift; sourceTree = "<group>"; };
 		AF01892F24AF734B00F58E1A /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
-		AF16ECE224B32EC500B14E8F /* nanopb.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = nanopb.xcframework; path = "Laser Run 2/GoogleMobileAdsSdkiOS-7.61.0/nanopb.xcframework"; sourceTree = "<group>"; };
-		AF16ECE324B32EC500B14E8F /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "Laser Run 2/GoogleMobileAdsSdkiOS-7.61.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
-		AF16ECE424B32EC500B14E8F /* GoogleUtilities.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleUtilities.xcframework; path = "Laser Run 2/GoogleMobileAdsSdkiOS-7.61.0/GoogleUtilities.xcframework"; sourceTree = "<group>"; };
-		AF16ECE524B32EC500B14E8F /* PromisesObjC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PromisesObjC.xcframework; path = "Laser Run 2/GoogleMobileAdsSdkiOS-7.61.0/PromisesObjC.xcframework"; sourceTree = "<group>"; };
-		AF16ECE624B32EC500B14E8F /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppMeasurement.framework; path = "Laser Run 2/GoogleMobileAdsSdkiOS-7.61.0/GoogleAppMeasurement.framework"; sourceTree = "<group>"; };
 		AF16ECF224B3499E00B14E8F /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
 		AF16ECF424B3739400B14E8F /* Ads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ads.swift; sourceTree = "<group>"; };
 		AF1B106924B8B07300C41937 /* BackgroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundViewController.swift; sourceTree = "<group>"; };
@@ -119,13 +110,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF16ECE924B32EC500B14E8F /* GoogleMobileAds.framework in Frameworks */,
-				AF16ECEF24B32EC500B14E8F /* GoogleAppMeasurement.framework in Frameworks */,
 				AFC08BB124BDB640009ABD54 /* StoreKit.framework in Frameworks */,
-				AF16ECE724B32EC500B14E8F /* nanopb.xcframework in Frameworks */,
-				AF16ECEB24B32EC500B14E8F /* GoogleUtilities.xcframework in Frameworks */,
-				AF16ECED24B32EC500B14E8F /* PromisesObjC.xcframework in Frameworks */,
 				AF032C8924BE534D001FF0C3 /* GameKit.framework in Frameworks */,
+				AF71A31A2B55D2900065ACF5 /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,11 +207,6 @@
 			children = (
 				AFC08BB024BDB640009ABD54 /* StoreKit.framework */,
 				AF16ECF224B3499E00B14E8F /* AppTrackingTransparency.framework */,
-				AF16ECE624B32EC500B14E8F /* GoogleAppMeasurement.framework */,
-				AF16ECE324B32EC500B14E8F /* GoogleMobileAds.framework */,
-				AF16ECE424B32EC500B14E8F /* GoogleUtilities.xcframework */,
-				AF16ECE224B32EC500B14E8F /* nanopb.xcframework */,
-				AF16ECE524B32EC500B14E8F /* PromisesObjC.xcframework */,
 				AFACFAA324AB9AD800ADBB20 /* GameKit.framework */,
 			);
 			name = Frameworks;
@@ -262,6 +244,9 @@
 			dependencies = (
 			);
 			name = "Laser Run 2";
+			packageProductDependencies = (
+				AF71A3192B55D2900065ACF5 /* GoogleMobileAds */,
+			);
 			productName = "Laser Run 2";
 			productReference = AF7FBB3024AA345A00C9E2AF /* Laser Run 2.app */;
 			productType = "com.apple.product-type.application";
@@ -333,6 +318,9 @@
 				Base,
 			);
 			mainGroup = AF7FBB2724AA345A00C9E2AF;
+			packageReferences = (
+				AF71A3182B55D2900065ACF5 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			productRefGroup = AF7FBB3124AA345A00C9E2AF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -486,6 +474,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -547,6 +536,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -747,6 +737,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AF71A3182B55D2900065ACF5 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.14.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AF71A3192B55D2900065ACF5 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF71A3182B55D2900065ACF5 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AF7FBB2824AA345A00C9E2AF /* Project object */;
 }

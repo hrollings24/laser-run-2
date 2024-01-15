@@ -20,9 +20,9 @@ class Ads{
         }
         self.vc = vct
         bannerView = GADBannerView()
-        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        bannerView = GADBannerView(adSize: GADAdSizeBanner)
         bannerView.adUnitID = AdIDs.bannerID //Your Ad ID goes here
-        bannerView.adSize = kGADAdSizeSmartBannerPortrait
+        bannerView.adSize = GADAdSizeBanner
         bannerView.rootViewController = vc
     }
     

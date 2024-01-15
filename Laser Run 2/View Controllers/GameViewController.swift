@@ -10,7 +10,7 @@ import SpriteKit
 import GameplayKit
 import GoogleMobileAds
 
-class GameViewController: UIViewController, GADInterstitialDelegate {
+class GameViewController: UIViewController, GADFullScreenContentDelegate {
     
     var previousLoc = CGPoint.init(x: UIScreen.main.bounds.size.width/2 , y: (UIScreen.main.bounds.size.height/5 * 4)+30)
     var scene: GameScene!
@@ -18,8 +18,8 @@ class GameViewController: UIViewController, GADInterstitialDelegate {
     var chosenTheme: String!
     var tapGesture: UIPanGestureRecognizer!
     var endVC: EndViewController!
-    var interstitial: GADInterstitial!
-    
+    private var interstitial: GADInterstitialAd?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -103,10 +103,10 @@ class GameViewController: UIViewController, GADInterstitialDelegate {
     func died(){
         let value = UserDefaults.standard.value(forKey: "removedAds") as! Bool
         if !value{
-            if (self.interstitial.isReady){
-                self.interstitial.present(fromRootViewController: self)
+            if let interstitialAd = interstitial {
+                interstitialAd.present(fromRootViewController: self)
             }
-            else{
+            else {
                 setupEndVC(withTime: 0.5)
             }
         }
@@ -157,24 +157,27 @@ class GameViewController: UIViewController, GADInterstitialDelegate {
         return true
     }
     
-    func loadAd(){
-        print("sup duck")
-        let value = UserDefaults.standard.value(forKey: "removedAds") as! Bool
-        if !value{
-            interstitial = GADInterstitial(adUnitID: AdIDs.intID)  //Your Ad ID goes here
-            let request = GADRequest()
-            interstitial.delegate = self
-            interstitial.load(request)
-        }
-    }
+    func loadAd() {
+         let value = UserDefaults.standard.value(forKey: "removedAds") as? Bool ?? false
+         if !value {
+             let request = GADRequest()
+             GADInterstitialAd.load(withAdUnitID: AdIDs.intID, request: request) { [weak self] ad, error in
+                 if let error = error {
+                     print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                     return
+                 }
+                 self?.interstitial = ad
+                 self?.interstitial?.fullScreenContentDelegate = self
+             }
+         }
+     }
     
-    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
-        print("Ad Received")
-    }
-    
-    func interstitialWillDismissScreen(_ ad: GADInterstitial) {
-        print("interstitialWillDismissScreen")
-        setupEndVC(withTime: 0.0)
-    }
+     func adWillDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+         setupEndVC(withTime: 0.0)
+     }
+
+     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+         print("Ad did dismiss full screen content.")
+     }
     
 }

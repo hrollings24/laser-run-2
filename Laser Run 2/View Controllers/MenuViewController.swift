@@ -167,18 +167,15 @@ class MenuViewController: UIViewController{
     }
     
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-        print("YAYAYYA")
+        print("Banner Ad Loaded Successfully")
         bannerView.isHidden = false
     }
-    
-    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
-        print("rip")
+
+    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+        print("Banner Ad Failed to Load: \(error.localizedDescription)")
         bannerView.isHidden = true
     }
-    
-    public func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError){
-        print("Inter error: \(error.localizedDescription)")
-    }
+
     
     func gameCenterViewControllerDidFinish(gcViewController: GKGameCenterViewController!)
     {

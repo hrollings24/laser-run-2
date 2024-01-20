@@ -105,7 +105,7 @@ class CharactersViewController: UIViewController, UICollectionViewDataSource, UI
         let image = UIImage(named: characterInUse.imageNamed)
         cell.imageView.image = image
         cell.name = characterInUse.imageNamed
-        cell.backgroundColor = UIColor(displayP3Red: 255, green: 255, blue: 255, alpha: 0.3)
+        cell.backgroundColor = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 0.3)
         cell.layer.cornerRadius = 10
 
         return cell

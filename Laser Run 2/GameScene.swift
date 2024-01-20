@@ -70,7 +70,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
 
         //Object
         let ob = UserDefaults.standard.value(forKey: "character") as! String
+        
         playerObject = Player(imageName: ob, gameScene: self)
+        
         if mode != .reverse{
             playerObject.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 5 + 20)
         }

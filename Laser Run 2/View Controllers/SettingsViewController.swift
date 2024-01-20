@@ -41,13 +41,13 @@ class SettingsViewController: UIViewController, SKPaymentTransactionObserver, SK
         overview.backgroundColor = .black
         overview.alpha = 0.0
         
-        remove.backgroundColor = UIColor(displayP3Red: 255, green: 255, blue: 255, alpha: 0.3)
-        setdefault.backgroundColor = UIColor(displayP3Red: 255, green: 255, blue: 255, alpha: 0.3)
+        remove.backgroundColor = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 0.3)
+        setdefault.backgroundColor = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 0.3)
         remove.titleLabel?.textColor = .black
         setdefault.titleLabel?.textColor = .black
         remove.layer.cornerRadius = 10
         setdefault.layer.cornerRadius = 10
-        restoreBtn.backgroundColor = UIColor(displayP3Red: 255, green: 255, blue: 255, alpha: 0.3)
+        restoreBtn.backgroundColor = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 0.3)
         restoreBtn.titleLabel?.textColor = .black
         restoreBtn.layer.cornerRadius = 10
         

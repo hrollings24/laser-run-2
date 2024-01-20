@@ -71,6 +71,7 @@
 		AF16ECF224B3499E00B14E8F /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
 		AF16ECF424B3739400B14E8F /* Ads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ads.swift; sourceTree = "<group>"; };
 		AF1B106924B8B07300C41937 /* BackgroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundViewController.swift; sourceTree = "<group>"; };
+		AF71A31B2B572DB50065ACF5 /* Laser Run 2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Laser Run 2.entitlements"; sourceTree = "<group>"; };
 		AF7FBB3024AA345A00C9E2AF /* Laser Run 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Laser Run 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF7FBB3324AA345A00C9E2AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF7FBB3924AA345A00C9E2AF /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -157,6 +158,7 @@
 		AF7FBB3224AA345A00C9E2AF /* Laser Run 2 */ = {
 			isa = PBXGroup;
 			children = (
+				AF71A31B2B572DB50065ACF5 /* Laser Run 2.entitlements */,
 				AFFA097224B7855D000A780B /* View Controllers */,
 				AF7FBB3324AA345A00C9E2AF /* AppDelegate.swift */,
 				AF7FBB3924AA345A00C9E2AF /* GameScene.swift */,
@@ -560,6 +562,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Laser Run 2/Laser Run 2.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G3CQTBK5N8;
@@ -589,6 +592,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Laser Run 2/Laser Run 2.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G3CQTBK5N8;

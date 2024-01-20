@@ -25,13 +25,13 @@ class SelectModeViewController: UIViewController {
         view.layer.masksToBounds = true;
         selected.text = "Currently Selected: " + String(UserDefaults.standard.value(forKey: "defaultMode") as! String)
 
-        classic.backgroundColor = UIColor(displayP3Red: 255, green: 255, blue: 255, alpha: 0.3)
+        classic.backgroundColor = UIColor(displayP3Red: 1, green: 1, blue: 1, alpha: 0.3)
         classic.layer.cornerRadius = 10
-        reverse.backgroundColor = UIColor(displayP3Red: 255, green: 255, blue: 255, alpha: 0.3)
+        reverse.backgroundColor = UIColor(displayP3Red: 1, green: 1, blue: 1, alpha: 0.3)
         reverse.layer.cornerRadius = 10
-        arcade.backgroundColor = UIColor(displayP3Red: 255, green: 255, blue: 255, alpha: 0.3)
+        arcade.backgroundColor = UIColor(displayP3Red: 1, green: 1, blue: 1, alpha: 0.3)
         arcade.layer.cornerRadius = 10
-        dash.backgroundColor = UIColor(displayP3Red: 255, green: 255, blue: 255, alpha: 0.3)
+        dash.backgroundColor = UIColor(displayP3Red: 1, green: 1, blue: 1, alpha: 0.3)
         dash.layer.cornerRadius = 10
 
 

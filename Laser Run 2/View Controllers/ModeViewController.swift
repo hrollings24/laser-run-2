@@ -33,11 +33,6 @@ class ModeViewController: UIViewController {
         reverse.titleLabel?.font = UIFont(name: "Potra", size: fontsize)
         arcade.titleLabel?.font = UIFont(name: "Potra", size: fontsize)
         dash.titleLabel?.font = UIFont(name: "Potra", size: fontsize)
-        
-        //CONSTRAINTS
-
-        
-        
     }
     
     

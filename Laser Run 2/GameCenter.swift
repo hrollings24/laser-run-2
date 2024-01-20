@@ -6,13 +6,10 @@
 //  Copyright © 2020 Harry Rollings. All rights reserved.
 //
 
-/*
-
 import Foundation
 import GameKit
 
 
-@available(iOS 14.0, *)
 class GameCenter{
     
     static let shared = GameCenter()
@@ -74,5 +71,3 @@ class GameCenter{
         }
     }
 }
-
- */

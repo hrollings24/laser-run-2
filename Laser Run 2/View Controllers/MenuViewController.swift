@@ -8,9 +8,9 @@
 import UIKit
 import GameKit
 import GoogleMobileAds
-//import AppTrackingTransparency
+import AppTrackingTransparency
 
-class MenuViewController: UIViewController{
+class MenuViewController: UIViewController, GKGameCenterControllerDelegate{
 
     @IBOutlet weak var logo: UILabel!
    
@@ -43,47 +43,14 @@ class MenuViewController: UIViewController{
             initaliseDB()
             UserDefaults.standard.setValue("true", forKey: "initalised")
         }
-        else{
-            
-        }
+    
         
-        //Set ad properties
-       
-        /*
-        if #available(iOS 14.0, *) {
-            GameCenter.shared.authPlayer(presentingVC: self)
-        } else {
-            GameCenter13.shared.authPlayer(presentingVC: self)
-
-        }
-        */
-        GameCenter13.shared.authPlayer(presentingVC: self)
-        //showLeaderboard()
-
+        GameCenter.shared.authPlayer(presentingVC: self)
     }
         
     override func viewWillAppear(_ animated: Bool) {
-        
-        
-        /*
-        if #available(iOS 14, *) {
-            ATTrackingManager.requestTrackingAuthorization { (status) in
-                // your code
-                
-                let a = ATTrackingManager.trackingAuthorizationStatus
-                print(a.rawValue)
-                let adverts = Ads(vct: self)
-                adverts.createBannerView()
-            }
-            // To know current status
-            let a = ATTrackingManager.trackingAuthorizationStatus
-            print(a.rawValue)
-        } else {
-            // Fallback on earlier versions
- */
-            let adverts = Ads(vct: self)
-            adverts.createBannerView()
-        
+        let adverts = Ads(vct: self)
+        adverts.createBannerView()
     }
     
     @IBAction func modePressed(_ sender: Any) {
@@ -112,11 +79,13 @@ class MenuViewController: UIViewController{
     func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
         gameCenterViewController.dismiss(animated: true, completion: nil)
     }
+
     
     @IBAction func leaderboardPressed(_ sender: Any) {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "leaderboard") as! LeaderboardViewController
-        root.changeView(fromvc: self, tovc: viewController, animation: UIView.AnimationOptions.transitionCrossDissolve, duration: 0.5)
+//        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "leaderboard") as! LeaderboardViewController
+//        root.changeView(fromvc: self, tovc: viewController, animation: UIView.AnimationOptions.transitionCrossDissolve, duration: 0.5)
+        showGameCenterDashboard()
     }
     
     @IBAction func charactersPressed(_ sender: Any) {
@@ -125,6 +94,12 @@ class MenuViewController: UIViewController{
      
         root.changeView(fromvc: self, tovc: viewController, animation: UIView.AnimationOptions.transitionCrossDissolve, duration: 0.5)
         
+    }
+    
+    func showGameCenterDashboard() {
+        let gameCenterViewController = GKGameCenterViewController(state: .leaderboards)
+        gameCenterViewController.gameCenterDelegate = self
+        present(gameCenterViewController, animated: true, completion: nil)
     }
     
     
@@ -175,12 +150,4 @@ class MenuViewController: UIViewController{
         print("Banner Ad Failed to Load: \(error.localizedDescription)")
         bannerView.isHidden = true
     }
-
-    
-    func gameCenterViewControllerDidFinish(gcViewController: GKGameCenterViewController!)
-    {
-        self.dismiss(animated: true, completion: nil)
-    }
-   
-
 }

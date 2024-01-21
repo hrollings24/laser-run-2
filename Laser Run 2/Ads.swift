@@ -15,20 +15,16 @@ class Ads{
     var bannerView: GADBannerView!
     
     init(vct: UIViewController){
-        if UserDefaults.standard.value(forKey: "removedAds") == nil{
-            UserDefaults.standard.setValue(false, forKey: "removedAds")
-        }
         self.vc = vct
         bannerView = GADBannerView()
         bannerView = GADBannerView(adSize: GADAdSizeBanner)
-        bannerView.adUnitID = AdIDs.bannerID //Your Ad ID goes here
+        bannerView.adUnitID = AdIDs.bannerID
         bannerView.adSize = GADAdSizeBanner
         bannerView.rootViewController = vc
     }
     
     func createBannerView(){
-        let value = UserDefaults.standard.value(forKey: "removedAds") as! Bool
-        if !value{
+        if !AdService.shared.removedAds{
             addBannerViewToView(bannerView)
             bannerView.load(GADRequest())
         }

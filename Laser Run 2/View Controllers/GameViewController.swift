@@ -101,7 +101,7 @@ class GameViewController: UIViewController, GADFullScreenContentDelegate {
      }
     
     func died(){
-        let value = UserDefaults.standard.value(forKey: "removedAds") as! Bool
+        let value = AdService.shared.removedAds
         if !value{
             if let interstitialAd = interstitial {
                 interstitialAd.present(fromRootViewController: self)
@@ -158,7 +158,7 @@ class GameViewController: UIViewController, GADFullScreenContentDelegate {
     }
     
     func loadAd() {
-         let value = UserDefaults.standard.value(forKey: "removedAds") as? Bool ?? false
+         let value = AdService.shared.removedAds
          if !value {
              let request = GADRequest()
              GADInterstitialAd.load(withAdUnitID: AdIDs.intID, request: request) { [weak self] ad, error in

@@ -51,10 +51,9 @@ class SettingsViewController: UIViewController, SKPaymentTransactionObserver, SK
         restoreBtn.titleLabel?.textColor = .black
         restoreBtn.layer.cornerRadius = 10
         
-        if UserDefaults.standard.value(forKey: "removedAds") as! Bool{
+        if AdService.shared.removedAds{
             removeButton.isEnabled = false
             restoreBtn.isEnabled = false
-
         }
 
         adverts = Ads(vct: self)
@@ -158,8 +157,7 @@ class SettingsViewController: UIViewController, SKPaymentTransactionObserver, SK
                 removeButton.isEnabled = false
                 adverts.bannerView.isHidden = true
                 //ALERT PAYMENT COMPLETE
-                UserDefaults.standard.setValue(true, forKey: "removedAds")
-                UserDefaults.standard.synchronize()
+                AdService.shared.updateToTrue()
                 break
             case .failed:
                 //FAILED
@@ -178,8 +176,7 @@ class SettingsViewController: UIViewController, SKPaymentTransactionObserver, SK
             case productID:
                 restoreBtn.isEnabled = false
                 adverts.bannerView.isHidden = true
-                UserDefaults.standard.setValue(true, forKey: "removedAds")
-                UserDefaults.standard.synchronize()
+                AdService.shared.updateToTrue()
                 createAlert(withTitle: "Restored", withDescription: "Your purchased was restored")
             default:
                 print("iap not found")

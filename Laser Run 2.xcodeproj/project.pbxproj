@@ -41,6 +41,7 @@
 		AFBBAA6724BCA6E400487A10 /* SelectModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBBAA6624BCA6E400487A10 /* SelectModeViewController.swift */; };
 		AFC08BB124BDB640009ABD54 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFC08BB024BDB640009ABD54 /* StoreKit.framework */; };
 		AFE783432B5D3D5700A01A06 /* TextureCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE783422B5D3D5700A01A06 /* TextureCache.swift */; };
+		AFE783452B5D4F0100A01A06 /* AdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE783442B5D4F0100A01A06 /* AdService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		AFBBAA6624BCA6E400487A10 /* SelectModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModeViewController.swift; sourceTree = "<group>"; };
 		AFC08BB024BDB640009ABD54 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AFE783422B5D3D5700A01A06 /* TextureCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureCache.swift; sourceTree = "<group>"; };
+		AFE783442B5D4F0100A01A06 /* AdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 				AF7FBB4224AA345B00C9E2AF /* Info.plist */,
 				AF7FBB6424AA356D00C9E2AF /* LaunchScreen.storyboard */,
 				AF8872672531FCB300D6EB5C /* AdIDs.swift */,
+				AFE783442B5D4F0100A01A06 /* AdService.swift */,
 			);
 			path = "Laser Run 2";
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				AF01892E24AF72C400F58E1A /* Split.swift in Sources */,
 				AFACFA9F24AB5CEF00ADBB20 /* ModeViewController.swift in Sources */,
 				AFACFAA824ABD65C00ADBB20 /* CharactersViewController.swift in Sources */,
+				AFE783452B5D4F0100A01A06 /* AdService.swift in Sources */,
 				AF01893024AF734B00F58E1A /* Double.swift in Sources */,
 				AFACFAAC24ABDB9400ADBB20 /* DBHelper.swift in Sources */,
 				AFBBAA6724BCA6E400487A10 /* SelectModeViewController.swift in Sources */,

@@ -30,7 +30,6 @@
 		AF7FBB6B24AA38E400C9E2AF /* FontSizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7FBB6A24AA38E400C9E2AF /* FontSizer.swift */; };
 		AF7FBB6D24AA751200C9E2AF /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7FBB6C24AA751100C9E2AF /* enums.swift */; };
 		AF7FBB6F24AA93F400C9E2AF /* EndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7FBB6E24AA93F400C9E2AF /* EndViewController.swift */; };
-		AF8872682531FCB300D6EB5C /* AdIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8872672531FCB300D6EB5C /* AdIDs.swift */; };
 		AF8BFABE24B907B800A534FF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8BFABD24B907B800A534FF /* SettingsViewController.swift */; };
 		AFACFA9F24AB5CEF00ADBB20 /* ModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFACFA9E24AB5CEF00ADBB20 /* ModeViewController.swift */; };
 		AFACFAA124AB944800ADBB20 /* GameCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFACFAA024AB944800ADBB20 /* GameCenter.swift */; };
@@ -92,7 +91,6 @@
 		AF7FBB6A24AA38E400C9E2AF /* FontSizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizer.swift; sourceTree = "<group>"; };
 		AF7FBB6C24AA751100C9E2AF /* enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enums.swift; sourceTree = "<group>"; };
 		AF7FBB6E24AA93F400C9E2AF /* EndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndViewController.swift; sourceTree = "<group>"; };
-		AF8872672531FCB300D6EB5C /* AdIDs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdIDs.swift; sourceTree = "<group>"; };
 		AF8BFABD24B907B800A534FF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		AFACFA9E24AB5CEF00ADBB20 /* ModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeViewController.swift; sourceTree = "<group>"; };
 		AFACFAA024AB944800ADBB20 /* GameCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenter.swift; sourceTree = "<group>"; };
@@ -176,7 +174,6 @@
 				AF7FBB6824AA365D00C9E2AF /* Potra-E0Ye.ttf */,
 				AF7FBB4224AA345B00C9E2AF /* Info.plist */,
 				AF7FBB6424AA356D00C9E2AF /* LaunchScreen.storyboard */,
-				AF8872672531FCB300D6EB5C /* AdIDs.swift */,
 				AFE783442B5D4F0100A01A06 /* AdService.swift */,
 			);
 			path = "Laser Run 2";
@@ -401,7 +398,6 @@
 				AF7FBB6724AA35D900C9E2AF /* MenuViewController.swift in Sources */,
 				AF01892C24AF70FF00F58E1A /* Slow.swift in Sources */,
 				AF01892624AF5CA100F58E1A /* Powerup.swift in Sources */,
-				AF8872682531FCB300D6EB5C /* AdIDs.swift in Sources */,
 				AF01892824AF5D5100F58E1A /* Invincible.swift in Sources */,
 				AF01892424AF538400F58E1A /* Player.swift in Sources */,
 				AFE783472B5D5A1400A01A06 /* PowerupDataService.swift in Sources */,

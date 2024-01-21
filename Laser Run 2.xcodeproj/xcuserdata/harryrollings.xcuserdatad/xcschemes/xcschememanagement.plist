@@ -7,7 +7,7 @@
 		<key>Laser Run 2.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<key>Promises (Playground) 1.xcscheme</key>
 		<dict>
@@ -29,6 +29,24 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>AF7FBB2F24AA345A00C9E2AF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AF7FBB4624AA345C00C9E2AF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AF7FBB5124AA345C00C9E2AF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

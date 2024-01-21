@@ -18,7 +18,7 @@ class Ads{
         self.vc = vct
         bannerView = GADBannerView()
         bannerView = GADBannerView(adSize: GADAdSizeBanner)
-        bannerView.adUnitID = AdIDs.bannerID
+        bannerView.adUnitID = ProcessInfo.processInfo.environment["bannerId"]
         bannerView.adSize = GADAdSizeBanner
         bannerView.rootViewController = vc
     }

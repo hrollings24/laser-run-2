@@ -9,6 +9,17 @@
 import Foundation
 import GameKit
 
+enum GameCenterErrors: Error {
+    case LeaderboardNotFound
+    case ScoreNotUpdated
+    
+    public var localizedDescription: String {
+        switch self {
+        case .LeaderboardNotFound: return "There was a problem fetching the leaderboard"
+        case .ScoreNotUpdated: return "Your score could not be added to Game Center"
+        }
+    }
+}
 
 class GameCenter{
     
@@ -33,41 +44,24 @@ class GameCenter{
     }
     
    
-    func getLeaderboard() -> GKLeaderboard{
-        var leader = GKLeaderboard()
+    func getLeaderboard() async throws -> GKLeaderboard? {
         let leaderboardID = ["overallhighscores"]
-        GKLeaderboard.loadLeaderboards(IDs: leaderboardID) { (leaderboards, error) in
-            if error == nil{
-                for leaderboard in leaderboards!{
-                    leader = leaderboard
-                }
-            }
-            else{
-                print(error as Any)
-            }
-        }
-        return leader
+        let leaderboards = try await GKLeaderboard.loadLeaderboards(IDs: leaderboardID)
+        return leaderboards.first
     }
+
     
     
-    func reportToLeaderboard(withScore: Int){
-        let leaderboard = getLeaderboard()
-        leaderboard.submitScore(withScore, context: 0, player: GKLocalPlayer.local) { (error) in
-            if error != nil{
-                print(error as Any)
-            }
-            else{
-                print("reported")
-            }
+    func reportToLeaderboard(withScore: Int) async throws {
+        guard let leaderboard = try await getLeaderboard() else {
+            throw GameCenterErrors.LeaderboardNotFound
+        }
+
+        do {
+            try await leaderboard.submitScore(withScore, context: 0, player: GKLocalPlayer.local)
+        } catch {
+            throw GameCenterErrors.ScoreNotUpdated
         }
     }
-    
-    func getScores(withLimit: GKLeaderboard.PlayerScope){
-        let leader = getLeaderboard()
-        let range = NSMakeRange (1, 20);
-        leader.loadEntries(for: withLimit, timeScope: .allTime, range: range) { (localPlayerEntry, entries, amountOfPlayers, error) in
-            let scoreo = localPlayerEntry?.formattedScore
-            print(scoreo as Any)
-        }
-    }
+
 }

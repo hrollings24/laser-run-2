@@ -69,6 +69,7 @@ class MenuViewController: UIViewController, GKGameCenterControllerDelegate{
         root.animationForLoad(fromvc: self, tovc: viewController)
     }
     
+    
     @IBAction func settingsPressed(_ sender: Any) {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "settings") as! SettingsViewController
@@ -82,9 +83,6 @@ class MenuViewController: UIViewController, GKGameCenterControllerDelegate{
 
     
     @IBAction func leaderboardPressed(_ sender: Any) {
-//        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "leaderboard") as! LeaderboardViewController
-//        root.changeView(fromvc: self, tovc: viewController, animation: UIView.AnimationOptions.transitionCrossDissolve, duration: 0.5)
         showGameCenterDashboard()
     }
     

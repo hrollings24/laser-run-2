@@ -44,7 +44,7 @@ class Player: SKSpriteNode{
     }
     
     func setPowerup(){
-        let randomInt = 1//Int.random(in: 1..<5)
+        let randomInt = Int.random(in: 1..<5)
         switch randomInt {
         case 1:
             hasPowerup = Invincible(onObject: self)

@@ -161,7 +161,7 @@ class GameViewController: UIViewController, GADFullScreenContentDelegate {
          let value = AdService.shared.removedAds
          if !value {
              let request = GADRequest()
-             var intId = ProcessInfo.processInfo.environment["intId"] ?? ""
+             let intId = ProcessInfo.processInfo.environment["intId"] ?? ""
              GADInterstitialAd.load(withAdUnitID: intId, request: request) { [weak self] ad, error in
                  if let error = error {
                      print("Failed to load interstitial ad with error: \(error.localizedDescription)")

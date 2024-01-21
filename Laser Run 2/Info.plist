@@ -22,8 +22,6 @@
 	<string>ca-app-pub-8455219520749328~4931239463</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>Your data will be used to deliver personalised ads to you. </string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UIBackgroundModes</key>

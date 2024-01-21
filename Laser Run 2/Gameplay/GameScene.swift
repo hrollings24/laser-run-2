@@ -21,6 +21,7 @@ struct PhysicsCatagory {
 
 class GameScene: SKScene, SKPhysicsContactDelegate{
     
+    var powerupDataService: PowerupDataService
     var score: Int!
     var playerObject: Player!
     var mode: Mode!
@@ -39,11 +40,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
     }
         
     override init(size:CGSize){
+        powerupDataService = PowerupDataService.shared
         super.init(size:size)
-        
     }
     
     required init(coder aDecoder: NSCoder) {
+        powerupDataService = PowerupDataService.shared
         super.init(coder: aDecoder)!
     }
     
@@ -281,7 +283,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         
         backgroundNode.isPaused = false
         
-        let createInitialLasers = SKAction.run({
+        let createLaser = SKAction.run({
             () in
             if self.mode != .reverse{
                 self.spawnLaser(atHeight: self.frame.height, timeInt: 6)
@@ -291,23 +293,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
             }
         })
         
-        let createLaser = SKAction.run({
-            () in
-            if self.mode != .reverse{
-                self.spawnLaser(atHeight: self.frame.height * 2, timeInt: 12)
-            }
-            else{
-                self.spawnLaser(atHeight: -self.frame.height, timeInt: 12)
-            }
-        })
-        
         let delay = SKAction.wait(forDuration: 1.2)
         let spawnLasers = SKAction.sequence([createLaser, delay])
         let spawnLasersForever = SKAction.repeatForever(spawnLasers)
-        let spawnInitialLasers = SKAction.sequence([createInitialLasers, delay])
-        let initialLasers = SKAction.repeat(spawnInitialLasers, count: 5)
 
-        rootNode.run(initialLasers)
         rootNode.run(spawnLasersForever)
         rootNode.speed = speedChanger
         
@@ -379,12 +368,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         if (contact1.categoryBitMask == PhysicsCatagory.Lightning && contact2.categoryBitMask == PhysicsCatagory.Object){
             contact1.node?.removeFromParent()
             
-            if !(UserDefaults.standard.value(forKey: "powerup") as! Bool) {
+            if !(powerupDataService.recieved) {
                 DispatchQueue.main.async{
                     //first time recieving a powerup!
                     //PAUSE GAME
-                    UserDefaults.standard.set(true, forKey: "powerup")
                     self.pause()
+                    self.powerupDataService.updateToTrue()
                     let alert = UIAlertController(title: "Powerup!", message: "You've recieved a powerup! Powerups can double your score, make you invincible, increase the laser gap or slow the game down", preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: { action in
                         //run your function here
@@ -403,12 +392,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         if (contact1.categoryBitMask == PhysicsCatagory.Object && contact2.categoryBitMask == PhysicsCatagory.Lightning){
             contact2.node?.removeFromParent()
             //ACTIVATE POWERUP
-            if !(UserDefaults.standard.value(forKey: "powerup") as! Bool) {
+            if !(powerupDataService.recieved) {
                 DispatchQueue.main.async{
                     //first time recieving a powerup!
                     //PAUSE GAME
-                    UserDefaults.standard.set(true, forKey: "powerup")
                     self.pause()
+                    self.powerupDataService.updateToTrue()
                     let alert = UIAlertController(title: "Powerup!", message: "You've recieved a powerup! Powerups can double your score, make you invincible, increase the laser gap or slow the game down", preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: { action in
                         //run your function here

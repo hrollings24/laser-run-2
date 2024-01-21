@@ -42,6 +42,7 @@
 		AFC08BB124BDB640009ABD54 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFC08BB024BDB640009ABD54 /* StoreKit.framework */; };
 		AFE783432B5D3D5700A01A06 /* TextureCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE783422B5D3D5700A01A06 /* TextureCache.swift */; };
 		AFE783452B5D4F0100A01A06 /* AdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE783442B5D4F0100A01A06 /* AdService.swift */; };
+		AFE783472B5D5A1400A01A06 /* PowerupDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE783462B5D5A1400A01A06 /* PowerupDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		AFC08BB024BDB640009ABD54 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AFE783422B5D3D5700A01A06 /* TextureCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureCache.swift; sourceTree = "<group>"; };
 		AFE783442B5D4F0100A01A06 /* AdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdService.swift; sourceTree = "<group>"; };
+		AFE783462B5D5A1400A01A06 /* PowerupDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerupDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 				AF7FBB3924AA345A00C9E2AF /* GameScene.swift */,
 				AFE783412B5D3D0900A01A06 /* Powerups */,
 				AFE783422B5D3D5700A01A06 /* TextureCache.swift */,
+				AFE783462B5D5A1400A01A06 /* PowerupDataService.swift */,
 			);
 			path = Gameplay;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				AF8872682531FCB300D6EB5C /* AdIDs.swift in Sources */,
 				AF01892824AF5D5100F58E1A /* Invincible.swift in Sources */,
 				AF01892424AF538400F58E1A /* Player.swift in Sources */,
+				AFE783472B5D5A1400A01A06 /* PowerupDataService.swift in Sources */,
 				AFACFAB024ADFDA600ADBB20 /* CollectionViewCell.swift in Sources */,
 				AF01892E24AF72C400F58E1A /* Split.swift in Sources */,
 				AFACFA9F24AB5CEF00ADBB20 /* ModeViewController.swift in Sources */,

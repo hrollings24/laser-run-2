@@ -47,7 +47,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         super.init(coder: aDecoder)!
     }
     
-    func setupGame(){
+    func setupGame() {
         
         startNode = SKLabelNode(fontNamed: "Potra")
         startNode.text = "Tap to Start"
@@ -73,6 +73,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         
         playerObject = Player(imageName: ob, gameScene: self)
         
+        let semaphore = DispatchSemaphore(value: 0)
+
+        TextureCache.shared.preloadTextures(objectName: ob) {
+            semaphore.signal()
+        }
+
+        semaphore.wait()
+    
         if mode != .reverse{
             playerObject.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 5 + 20)
         }

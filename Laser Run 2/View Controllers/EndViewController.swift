@@ -141,15 +141,9 @@ class EndViewController: UIViewController {
         
         updateStats()
             
-        /*
-        if #available(iOS 14.0, *) {
-            // use the feature only available in iOS 14
-            GameCenter.shared.reportToLeaderboard(withScore: self.score)
-        }
-        else {
-            // pre iOS 14
-        */
-        GameCenter13.shared.saveHighScore(numberToSave: self.score)
+        Task {
+           await reportScoreAndHandleError()
+       }
         
         //create message AFTER stats updated
         message.text = checkAchievements()
@@ -167,4 +161,21 @@ class EndViewController: UIViewController {
             return ""
         }
     }
+    
+    func reportScoreAndHandleError() async {
+        do {
+            try await GameCenter.shared.reportToLeaderboard(withScore: self.score)
+        } catch {
+            DispatchQueue.main.async {
+                self.showAlert(with: "Error", message: "Failed to report score: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func showAlert(with title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true)
+    }
+
 }

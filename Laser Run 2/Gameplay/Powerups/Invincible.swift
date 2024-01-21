@@ -24,12 +24,16 @@ class Invincible: Powerup{
         counter += 1
         if counter > 24 && counter < 36{
             if switchTexture == 1{
-                object.setTexture(texture: SKTexture(imageNamed: object.name!))
-                switchTexture = 0
+                if let texture = TextureCache.shared.getTexture(name: object.name!) {
+                    object.setTexture(texture: texture)
+                    switchTexture = 0
+                }
             }
             else{
-                object.setTexture(texture: SKTexture(imageNamed: object.name! + " Yellow"))
-                switchTexture = 1
+                if let texture = TextureCache.shared.getTexture(name: object.name! + " Yellow") {
+                    object.setTexture(texture: texture)
+                    switchTexture = 1
+                }
             }
         }
         else if counter >= 36{
